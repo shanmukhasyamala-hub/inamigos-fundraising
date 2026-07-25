@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The 100 Humanity Challenge | Inamigos Foundation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: #f5f0eb;
+            color: #1e1e2a;
+            overflow-x: hidden;
+        }
+
+        /* TOP BANNER */
+        .top-banner {
+            background: #1a1a2e;
+            color: #f5c842;
+            text-align: center;
+            padding: 0.6rem;
+            font-weight: 600;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .top-banner span {
+            color: white;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(145deg, #1a1a2e 0%, #16213e 100%);
+            color: white;
+            padding: 3rem 1.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(245, 200, 66, 0.08) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: #f5c842;
+            color: #1a1a2e;
+            padding: 0.3rem 2rem;
+            border-radius: 50px;
+            font-weight: 800;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 1rem;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero h1 .highlight {
+            color: #f5c842;
+        }
+
+        .hero h1 .highlight-2 {
+            color: #ff6b6b;
+        }
+
+        .hero-sub {
+            font-size: 1.4rem;
+            color: #d4d4e8;
+            margin-bottom: 0.5rem;
+        }
+
+        .hero-sub strong {
+            color: #f5c842;
+        }
+
+        .hero-math {
+            background: rgba(255, 255, 255, 0.06);
+            padding: 1.5rem 2rem;
+            border-radius: 20px;
+            margin: 2rem auto;
+            max-width: 600px;
+            border: 1px solid rgba(245, 200, 66, 0.2);
+        }
+
+        .hero-math .big-number {
+            font-size: 3rem;
+            font-weight: 900;
+            color: #f5c842;
+        }
+
+        .hero-math .big-number span {
+            font-size: 1.8rem;
+            color: white;
+        }
+
+        .hero-math p {
+            color: #b0b0cc;
+            font-size: 1.1rem;
+        }
+
+        .cta-primary {
+            display: inline-block;
+            background: #f5c842;
+            color: #1a1a2e;
+            padding: 1rem 3.5rem;
+            border-radius: 60px;
+            font-weight: 800;
+            font-size: 1.3rem;
+            text-decoration: none;
+            transition: 0.3s;
+            box-shadow: 0 10px 40px rgba(245, 200, 66, 0.3);
+            margin-top: 1rem;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cta-primary:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 50px rgba(245, 200, 66, 0.4);
+            background: #ffd95e;
+        }
+
+        .cta-secondary {
+            display: inline-block;
+            background: transparent;
+            color: white;
+            padding: 0.9rem 2.5rem;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-decoration: none;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: 0.3s;
+            margin-top: 0.8rem;
+            cursor: pointer;
+        }
+
+        .cta-secondary:hover {
+            border-color: #f5c842;
+            color: #f5c842;
+        }
+
+        /* BEFORE / AFTER SECTION */
+        .impact-section {
+            background: white;
+            padding: 3rem 1.5rem;
+            text-align: center;
+        }
+
+        .impact-section h2 {
+            font-size: 2.2rem;
+            color: #1a1a2e;
+            margin-bottom: 0.5rem;
+        }
+
+        .impact-section .subtitle {
+            color: #666;
+            margin-bottom: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .ba-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .ba-card {
+            padding: 2rem 1.5rem;
+            border-radius: 20px;
+            text-align: center;
+        }
+
+        .ba-card.before {
+            background: #fef6f0;
+            border: 2px solid #ff6b6b44;
+        }
+
+        .ba-card.after {
+            background: #f0faf4;
+            border: 2px solid #2ecc7144;
+        }
+
+        .ba-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .ba-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .ba-card.before h3 {
+            color: #c0392b;
+        }
+        .ba-card.after h3 {
+            color: #27ae60;
+        }
+
+        .ba-card p {
+            color: #555;
+        }
+
+        .ba-card .price-tag {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-top: 0.5rem;
+        }
+
+        .ba-card.before .price-tag {
+            color: #c0392b;
+        }
+        .ba-card.after .price-tag {
+            color: #27ae60;
+        }
+
+        /* CAMPAIGN PROGRESS */
+        .progress-section {
+            background: #f8f6f2;
+            padding: 3rem 1.5rem;
+        }
+
+        .progress-card {
+            max-width: 800px;
+            margin: auto;
+            background: white;
+            padding: 2.5rem;
+            border-radius: 24px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+        }
+
+        .progress-card h2 {
+            text-align: center;
+            color: #1a1a2e;
+            margin-bottom: 1.5rem;
+        }
+
+        .progress-stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-box {
+            text-align: center;
+        }
+
+        .stat-box .number {
+            font-size: 2.2rem;
+            font-weight: 900;
+            color: #1a1a2e;
+        }
+
+        .stat-box .number.gold {
+            color: #f5c842;
+        }
+
+        .stat-box .label {
+            color: #777;
+            font-size: 0.9rem;
+        }
+
+        .progress-bar-bg {
+            background: #e9ecef;
+            height: 24px;
+            border-radius: 30px;
+            overflow: hidden;
+            margin: 1.5rem 0;
+        }
+
+        .progress-fill {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, #f5c842, #f39c12);
+            border-radius: 30px;
+            transition: width 1s ease;
+        }
+
+        .progress-label {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* DONATION SECTION */
+        .donation-section {
+            background: white;
+            padding: 3rem 1.5rem;
+        }
+
+        .donation-box {
+            max-width: 700px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .donation-box h2 {
+            font-size: 2rem;
+            color: #1a1a2e;
+        }
+
+        .donation-box .tagline {
+            color: #666;
+            margin: 0.5rem 0 1.5rem;
+            font-size: 1.1rem;
+        }
+
+        .amount-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.8rem;
+            justify-content: center;
+            margin: 1.5rem 0;
+        }
+
+        .amount-btn {
+            padding: 0.8rem 1.8rem;
+            border: 2px solid #e0dcd6;
+            background: white;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.25s;
+            color: #1a1a2e;
+        }
+
+        .amount-btn:hover,
+        .amount-btn.active {
+            border-color: #f5c842;
+            background: #fef9ed;
+            color: #1a1a2e;
+        }
+
+        .amount-btn .rupee {
+            font-size: 1rem;
+        }
+
+        .custom-amount {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+            margin: 1.5rem 0;
+        }
+
+        .custom-amount input {
+            padding: 0.9rem 1.5rem;
+            border: 2px solid #e0dcd6;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            width: 200px;
+            text-align: center;
+            font-weight: 600;
+        }
+
+        .custom-amount input:focus {
+            outline: none;
+            border-color: #f5c842;
+        }
+
+        .btn-donate {
+            background: #f5c842;
+            color: #1a1a2e;
+            border: none;
+            padding: 1rem 3.5rem;
+            border-radius: 60px;
+            font-size: 1.3rem;
+            font-weight: 800;
+            cursor: pointer;
+            transition: 0.3s;
+            box-shadow: 0 8px 30px rgba(245, 200, 66, 0.35);
+            width: 100%;
+            max-width: 350px;
+        }
+
+        .btn-donate:hover {
+            background: #ffd95e;
+            transform: translateY(-2px);
+            box-shadow: 0 12px 40px rgba(245, 200, 66, 0.4);
+        }
+
+        .challenge-box {
+            background: #fef9ed;
+            border: 2px dashed #f5c842;
+            border-radius: 20px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .challenge-box h3 {
+            color: #1a1a2e;
+            font-size: 1.3rem;
+        }
+
+        .challenge-box .highlight-text {
+            color: #e67e22;
+            font-weight: 800;
+            font-size: 1.2rem;
+        }
+
+        .btn-challenge {
+            background: #1a1a2e;
+            color: #f5c842;
+            border: none;
+            padding: 0.8rem 2.5rem;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 0.8rem;
+        }
+
+        .btn-challenge:hover {
+            background: #2a2a4e;
+            transform: scale(1.02);
+        }
+
+        /* ===== QR MODAL ===== */
+        .qr-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(8px);
+            z-index: 9999;
+            align-items: center;
+            justify-content: center;
+            animation: fadeIn 0.3s ease;
+        }
+
+        .qr-modal.active {
+            display: flex;
+        }
+
+        .qr-modal-content {
+            background: white;
+            border-radius: 30px;
+            padding: 2.5rem;
+            max-width: 520px;
+            width: 92%;
+            text-align: center;
+            position: relative;
+            animation: slideUp 0.4s ease;
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.5);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(40px) scale(0.95);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+        }
+
+        .qr-modal-close {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            font-size: 2rem;
+            cursor: pointer;
+            color: #999;
+            transition: 0.3s;
+            background: none;
+            border: none;
+            line-height: 1;
+        }
+
+        .qr-modal-close:hover {
+            color: #1a1a2e;
+            transform: rotate(90deg);
+        }
+
+        .qr-modal .modal-badge {
+            display: inline-block;
+            background: #f5c842;
+            color: #1a1a2e;
+            padding: 0.2rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 0.5rem;
+        }
+
+        .qr-modal h2 {
+            color: #1a1a2e;
+            font-size: 1.8rem;
+            margin-bottom: 0.2rem;
+        }
+
+        .qr-modal .modal-sub {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .qr-modal .modal-amount {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #f5c842;
+            margin: 0.5rem 0;
+        }
+
+        .qr-modal .qr-wrapper {
+            background: white;
+            padding: 1rem;
+            border-radius: 20px;
+            display: inline-block;
+            border: 3px solid #f5c842;
+            margin: 0.5rem 0;
+        }
+
+        .qr-modal .qr-wrapper img {
+            width: 220px;
+            height: 220px;
+            display: block;
+            object-fit: contain;
+        }
+
+        .qr-modal .upi-details {
+            background: #f8f6f2;
+            padding: 1rem;
+            border-radius: 16px;
+            margin: 1.5rem 0 1rem;
+        }
+
+        .qr-modal .upi-details .upi-label {
+            font-size: 0.8rem;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .qr-modal .upi-details .upi-id {
+            font-size: 1.4rem;
+            font-weight: 800;
+            color: #1a1a2e;
+            font-family: monospace;
+            letter-spacing: 1px;
+        }
+
+        .qr-modal .upi-details .upi-id span {
+            color: #f5c842;
+        }
+
+        .qr-modal .modal-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        .qr-modal .btn-copy {
+            background: #1a1a2e;
+            color: #f5c842;
+            border: none;
+            padding: 0.7rem 1.8rem;
+            border-radius: 50px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .qr-modal .btn-copy:hover {
+            background: #2a2a4e;
+            transform: scale(1.02);
+        }
+
+        .qr-modal .btn-done {
+            background: #f5c842;
+            color: #1a1a2e;
+            border: none;
+            padding: 0.7rem 2.5rem;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .qr-modal .btn-done:hover {
+            background: #ffd95e;
+            transform: scale(1.02);
+        }
+
+        .qr-modal .payment-note {
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 1rem;
+        }
+
+        /* FOOTER */
+        .footer {
+            background: #1a1a2e;
+            color: #b0b0cc;
+            padding: 2rem 1.5rem;
+            text-align: center;
+        }
+
+        .footer .foundation-name {
+            color: #f5c842;
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        .footer .tagline {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+        }
+
+        /* TOAST */
+        .toast {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #1a1a2e;
+            color: #f5c842;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+            transform: translateY(120px);
+            opacity: 0;
+            transition: 0.4s ease;
+            font-weight: 600;
+            z-index: 10000;
+        }
+
+        .toast.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        /* RESPONSIVE */
+        @media (max-width: 700px) {
+            .hero h1 {
+                font-size: 2.6rem;
+            }
+            .hero-math .big-number {
+                font-size: 2.2rem;
+            }
+            .ba-container {
+                grid-template-columns: 1fr;
+            }
+            .progress-stats {
+                flex-direction: column;
+                gap: 0.8rem;
+            }
+            .qr-modal .qr-wrapper img {
+                width: 170px;
+                height: 170px;
+            }
+            .qr-modal-content {
+                padding: 1.8rem;
+            }
+            .amount-btn {
+                padding: 0.6rem 1.2rem;
+                font-size: 0.95rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            .cta-primary {
+                padding: 0.8rem 2rem;
+                font-size: 1rem;
+            }
+            .btn-donate {
+                font-size: 1rem;
+                padding: 0.8rem 2rem;
+            }
+            .qr-modal .qr-wrapper img {
+                width: 140px;
+                height: 140px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BANNER -->
+    <div class="top-banner">
+        🇮🇳 <span>100 Humanity Challenge</span> • Donate ₹100 • Challenge 3 Friends • #InamigosFoundation
+    </div>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">🔥 The 100 Humanity Challenge</div>
+            <h1>
+                <span class="highlight">₹100</span> =<br />
+                1 Child's <span class="highlight-2">Future</span>
+            </h1>
+            <p class="hero-sub">
+                <strong>1 Lakh People</strong> × <strong>₹100</strong> = <strong style="color:#f5c842;">10,000 Children Educated</strong>
+            </p>
+
+            <div class="hero-math">
+                <div class="big-number">
+                    <span>₹</span>1 <span>Crore</span>
+                </div>
+                <p>Target Fundraising for Education</p>
+            </div>
+
+            <button class="cta-primary" onclick="openQRModal()">❤️ Donate ₹100 Now</button><br />
+            <button class="cta-secondary" onclick="challengeFriends()">📢 Challenge 3 Friends!</button>
+        </div>
+    </section>
+
+    <!-- BEFORE / AFTER -->
+    <section class="impact-section">
+        <h2>💫 Before & After</h2>
+        <p class="subtitle">Your ₹100 changes everything</p>
+        <div class="ba-container">
+            <div class="ba-card before">
+                <div class="icon">😔</div>
+                <h3>BEFORE</h3>
+                <p>A child without school, nutrition, or hope</p>
+                <div class="price-tag">₹0</div>
+                <small style="color:#999;">No education support</small>
+            </div>
+            <div class="ba-card after">
+                <div class="icon">🌟</div>
+                <h3>AFTER</h3>
+                <p>A child with education, meals, and a future</p>
+                <div class="price-tag">₹100</div>
+                <small style="color:#27ae60;">One-time investment</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROGRESS -->
+    <section class="progress-section" id="progress">
+        <div class="progress-card">
+            <h2>📊 Campaign Progress</h2>
+            <div class="progress-stats">
+                <div class="stat-box">
+                    <div class="number gold" id="raisedDisplay">₹0</div>
+                    <div class="label">Raised So Far</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number">₹1,00,00,000</div>
+                    <div class="label">Target</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number" id="donorsDisplay">0</div>
+                    <div class="label">Donors</div>
+                </div>
+                <div class="stat-box">
+                    <div class="number" id="childrenDisplay">0</div>
+                    <div class="label">Children Impacted</div>
+                </div>
+            </div>
+
+            <div class="progress-bar-bg">
+                <div class="progress-fill" id="progressFill"></div>
+            </div>
+            <div class="progress-label">
+                <span id="percentDisplay">0%</span>
+                <span>Goal: ₹1 Crore</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- DONATION SECTION -->
+    <section class="donation-section" id="donate">
+        <div class="donation-box">
+            <h2>💛 Donate ₹100</h2>
+            <p class="tagline">Save a child's future for just ₹100</p>
+
+            <div class="amount-grid" id="amountOptions">
+                <button class="amount-btn active" data-amount="100">₹100</button>
+                <button class="amount-btn" data-amount="200">₹200</button>
+                <button class="amount-btn" data-amount="500">₹500</button>
+                <button class="amount-btn" data-amount="1000">₹1,000</button>
+                <button class="amount-btn" data-amount="5000">₹5,000</button>
+            </div>
+
+            <div class="custom-amount">
+                <input type="number" id="customAmount" placeholder="Enter amount (₹)" min="1" />
+                <button class="btn-donate" id="donateBtn">❤️ Donate Now</button>
+            </div>
+
+            <!-- CHALLENGE BOX -->
+            <div class="challenge-box">
+                <h3>📢 <span class="highlight-text">Challenge 3 Friends!</span></h3>
+                <p style="color:#555; margin-top:0.3rem;">
+                    After you donate, challenge <strong>3 friends</strong> to do the same.<br />
+                    Together we reach <strong>1 Lakh people</strong>!
+                </p>
+                <button class="btn-challenge" onclick="challengeFriends()">
+                    📱 Challenge Now
+                </button>
+            </div>
+
+            <p style="font-size:0.85rem; color:#888; margin-top:1rem;">
+                🔒 Secure Payment • 100% goes to child education
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== QR MODAL ===== -->
+    <div class="qr-modal" id="qrModal">
+        <div class="qr-modal-content">
+            <button class="qr-modal-close" onclick="closeQRModal()">✕</button>
+
+            <div class="modal-badge">📱 Scan & Donate</div>
+            <h2>Complete Your Donation</h2>
+            <p class="modal-sub">Scan the QR code below with any UPI app</p>
+
+            <div class="modal-amount" id="modalAmount">₹100</div>
+
+            <div class="qr-wrapper">
+                <!-- 
+                    ⚠️ IMPORTANT: Replace the src below with YOUR actual QR code image
+                    Save the QR code from the Word file as "qr-code.png" in the same folder
+                    and update the src to: src="qr-code.png"
+                -->
+                <img src="qr-code.png" alt="UPI QR Code - Inamigos Foundation" id="qrImage" />
+            </div>
+
+            <div class="upi-details">
+                <div class="upi-label">UPI ID</div>
+                <div class="upi-id">💳 <span>inamigosfoundation@icici</span></div>
+            </div>
+
+            <div class="modal-actions">
+                <button class="btn-copy" onclick="copyUPI()">📋 Copy UPI ID</button>
+                <button class="btn-done" onclick="closeQRModal()">✅ Done</button>
+            </div>
+
+            <p class="payment-note">
+                🙏 After payment, click "Done" and we'll update the progress
+            </p>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="foundation-name">🏛️ Inamigos Foundation</div>
+        <p style="font-size:1.2rem; color:#f5c842; margin:0.3rem 0;">The 100 Humanity Challenge</p>
+        <p class="tagline">1 Lakh People × ₹100 = 10,000 Children Educated</p>
+        <p style="margin-top:1rem; font-size:0.85rem; opacity:0.6;">
+            © 2026 • Together we make a difference 🇮🇳
+        </p>
+    </footer>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast">✅ Thank you! You've changed a child's life.</div>
+
+    <script>
+        (function() {
+            // ------ CAMPAIGN DATA (in INR) ------
+            let raised = 1245000; // ₹12.45 Lakhs
+            const goal = 10000000; // ₹1 Crore
+            let donors = 1245;
+
+            const progressFill = document.getElementById('progressFill');
+            const raisedDisplay = document.getElementById('raisedDisplay');
+            const donorsDisplay = document.getElementById('donorsDisplay');
+            const childrenDisplay = document.getElementById('childrenDisplay');
+            const percentDisplay = document.getElementById('percentDisplay');
+            const donateBtn = document.getElementById('donateBtn');
+            const customInput = document.getElementById('customAmount');
+            const amountBtns = document.querySelectorAll('.amount-btn');
+            const toast = document.getElementById('toast');
+            const modalAmount = document.getElementById('modalAmount');
+
+            let selectedAmount = 100;
+
+            // ------ FORMAT INDIAN CURRENCY ------
+            function formatINR(amount) {
+                return '₹' + amount.toLocaleString('en-IN');
+            }
+
+            // ------ UPDATE UI ------
+            function updateUI() {
+                const percent = Math.min((raised / goal) * 100, 100);
+                progressFill.style.width = percent + '%';
+                raisedDisplay.textContent = formatINR(raised);
+                donorsDisplay.textContent = donors.toLocaleString('en-IN');
+                const children = Math.floor(raised / 100);
+                childrenDisplay.textContent = children.toLocaleString('en-IN');
+                percentDisplay.textContent = percent.toFixed(1) + '%';
+            }
+
+            // ------ ADD DONATION (simulated) ------
+            function addDonation(amount) {
+                if (amount <= 0 || isNaN(amount)) {
+                    alert('🙏 Please enter a valid donation amount (₹1 or more).');
+                    return;
+                }
+
+                raised += amount;
+                donors += 1;
+                updateUI();
+
+                const childrenAdded = Math.floor(amount / 100);
+                toast.textContent = `🎉 Thank you! ₹${amount} donated. ${childrenAdded > 0 ? childrenAdded + ' child(ren) will be educated!' : 'Every rupee counts!'}`;
+                toast.classList.add('show');
+                setTimeout(() => toast.classList.remove('show'), 4000);
+
+                console.log(`Donation: ₹${amount} | Total: ₹${raised} | Donors: ${donors}`);
+            }
+
+            // ------ OPEN QR MODAL ------
+            window.openQRModal = function() {
+                const amount = selectedAmount;
+                modalAmount.textContent = '₹' + amount;
+                document.getElementById('qrModal').classList.add('active');
+                document.body.style.overflow = 'hidden';
+            };
+
+            // ------ CLOSE QR MODAL ------
+            window.closeQRModal = function() {
+                document.getElementById('qrModal').classList.remove('active');
+                document.body.style.overflow = 'auto';
+                // Simulate donation after closing (user paid)
+                addDonation(selectedAmount);
+            };
+
+            // ------ CLOSE ON BACKDROP CLICK ------
+            document.getElementById('qrModal').addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeQRModal();
+                }
+            });
+
+            // ------ COPY UPI ------
+            window.copyUPI = function() {
+                const upiId = 'inamigosfoundation@upi';
+                navigator.clipboard.writeText(upiId).then(() => {
+                    toast.textContent = '📋 UPI ID copied! Paste in your UPI app.';
+                    toast.classList.add('show');
+                    setTimeout(() => toast.classList.remove('show'), 3000);
+                }).catch(() => {
+                    prompt('Copy this UPI ID:', upiId);
+                });
+            };
+
+            // ------ AMOUNT BUTTONS ------
+            amountBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    amountBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    selectedAmount = parseInt(this.dataset.amount);
+                    customInput.value = '';
+                });
+            });
+
+            // ------ CUSTOM AMOUNT ------
+            customInput.addEventListener('input', function() {
+                amountBtns.forEach(b => b.classList.remove('active'));
+                if (this.value) {
+                    selectedAmount = parseFloat(this.value);
+                }
+            });
+
+            // ------ DONATE BUTTON (opens QR) ------
+            donateBtn.addEventListener('click', function() {
+                let amount = selectedAmount;
+                if (customInput.value && parseFloat(customInput.value) > 0) {
+                    amount = parseFloat(customInput.value);
+                }
+                if (amount <= 0 || isNaN(amount)) {
+                    alert('🙏 Please enter a valid donation amount.');
+                    return;
+                }
+                selectedAmount = amount;
+                openQRModal();
+            });
+
+            // ------ CHALLENGE FRIENDS ------
+            window.challengeFriends = function() {
+                const shareText =
+                    `🔥 I just donated ₹100 to Inamigos Foundation's #100HumanityChallenge! 1 Lakh people × ₹100 = 10,000 children educated. I challenge YOU to do the same! 🙏 Donate here: ${window.location.href}`;
+
+                if (navigator.share) {
+                    navigator.share({
+                        title: '100 Humanity Challenge',
+                        text: shareText,
+                        url: window.location.href,
+                    }).catch(() => {});
+                } else {
+                    navigator.clipboard.writeText(shareText).then(() => {
+                        toast.textContent = '📋 Copied! Share with 3 friends now!';
+                        toast.classList.add('show');
+                        setTimeout(() => toast.classList.remove('show'), 3000);
+                    }).catch(() => {
+                        prompt('Copy this and share with 3 friends:', shareText);
+                    });
+                }
+            };
+
+            // ------ ENTER KEY SUPPORT ------
+            customInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    donateBtn.click();
+                }
+            });
+
+            // ------ ESC KEY CLOSE MODAL ------
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeQRModal();
+                }
+            });
+
+            // ------ INIT ------
+            updateUI();
+        })();
+    </script>
+
+</body>
+</html>
